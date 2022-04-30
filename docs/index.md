@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /fe.jpg
-actionText: 拯救不开心 →
+actionText: 拯救不开心  →
 actionLink: /guide/
 features:
 - title: 效率提升
