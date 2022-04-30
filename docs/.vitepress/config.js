@@ -7,7 +7,7 @@ module.exports = {
       href: '/fe.ico'
     }]
   ],
-  base: '/',
+  base: '/admin-docs/',
   markdown: {
     // lineNumbers: true
   },
@@ -23,7 +23,7 @@ module.exports = {
       { text: '框架文档', link: '/doc/base/guide' },
       { text: '编码格式', link: '/standard/standard' },
       { text: 'Git管理', link: '/git/git' },
-      { text: 'UI 组件', link: 'http://10.88.124.233/mxui/#/' },
+      { text: 'UI 组件', link: '/' },
       // {
       //   text: '其他知识',
       //   items: [

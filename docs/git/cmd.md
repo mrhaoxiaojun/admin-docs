@@ -57,7 +57,7 @@ git checkout branch_1.0/master # 切换到branch_1.0/master分支
 
 ## 远程仓库相关命令
 
-检出仓库：`$ git clone git://github.com/xxx/xxx.git`
+检出仓库：`$ git clone xxx`
 
 查看远程仓库：`$ git remote -v`
 
