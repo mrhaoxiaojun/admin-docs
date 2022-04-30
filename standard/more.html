@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>html规范 | 前端通用框架及工作流</title>
+    <meta name="description" content="通用框架及工作流程管理用于解决效率、复用问题，使用Vue技术栈">
+    <link rel="stylesheet" href="/admin-docs/assets/style.3fd4eeb0.css">
+    <link rel="modulepreload" href="/admin-docs/assets/app.705411ad.js">
+    <link rel="modulepreload" href="/admin-docs/assets/standard_more.md.03706ab9.lean.js">
+    
+    <link rel="icon" href="/fe.ico">
+  <meta name="twitter:title" content="html规范 | 前端通用框架及工作流">
+  <meta property="og:title" content="html规范 | 前端通用框架及工作流">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/admin-docs/" aria-label="前端通用框架及工作流, back to home" data-v-675d8756 data-v-cc01ef16><!----> 前端通用框架及工作流</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/" data-v-b8818f8c>首页 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/guide/" data-v-b8818f8c>暴力指南 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/doc/base/guide" data-v-b8818f8c>框架文档 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/standard/standard" data-v-b8818f8c>编码格式 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/git/git" data-v-b8818f8c>Git管理 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/" data-v-b8818f8c>UI 组件 <!----></a></div></div><!--]--><!----><!----></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/" data-v-b8818f8c>首页 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/guide/" data-v-b8818f8c>暴力指南 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/doc/base/guide" data-v-b8818f8c>框架文档 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/standard/standard" data-v-b8818f8c>编码格式 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/git/git" data-v-b8818f8c>Git管理 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/admin-docs/" data-v-b8818f8c>UI 组件 <!----></a></div></div><!--]--><!----><!----></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><p class="sidebar-link-item">规则</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/admin-docs/standard/standard">编码格式(必)</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item active" href="/admin-docs/standard/more">更多(选)</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#html规范">html规范</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#css规范">css规范</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#js规范细则">js规范细则</a><!----></li></ul></li></ul></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h2 id="html规范" tabindex="-1">html规范 <a class="header-anchor" href="#html规范" aria-hidden="true">#</a></h2><h4 id="_1-html5-doctype" tabindex="-1">1.HTML5 doctype <a class="header-anchor" href="#_1-html5-doctype" aria-hidden="true">#</a></h4><p>在页面开头使用这个简单地doctype来启用标准模式，使其在每个浏览器中尽可能一致的展现；</p><p>虽然doctype不区分大小写，但是按照惯例，doctype大写 （<a href="http://stackoverflow.com/questions/15594877/is-there-any-benefits-to-use-uppercase-or-lowercase-letters-with-html5-tagname" target="_blank" rel="noopener noreferrer">关于html属性，大写还是小写</a>）。</p><div class="language-html"><pre><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+	...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_2-lang属性" tabindex="-1">2.lang属性 <a class="header-anchor" href="#_2-lang属性" aria-hidden="true">#</a></h4><p>根据HTML5规范：</p><blockquote><p>应在html标签上加上lang属性。这会给语音工具和翻译工具帮助，告诉它们应当怎么去发音和翻译。</p></blockquote><p>为什么使用 lang=&quot;zh-cmn-Hans&quot; 而不是我们通常写的 lang=&quot;zh-CN&quot; 呢? 请参考知乎上的讨论: <a href="http://www.zhihu.com/question/20797118" target="_blank" rel="noopener noreferrer">网页头部的声明应该是用 lang=&quot;zh&quot; 还是 lang=&quot;zh-cn&quot;？</a></p><div class="language-html"><pre><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh-cmn-Hans<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_3-字符编码" tabindex="-1">3.字符编码 <a class="header-anchor" href="#_3-字符编码" aria-hidden="true">#</a></h4><p>通过声明一个明确的字符编码，让浏览器轻松、快速的确定适合网页内容的渲染方式，通常指定为&#39;UTF-8&#39;。</p><div class="language-html"><pre><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh-cmn-Hans<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_4-ie兼容模式及国内360浏览器内核控制" tabindex="-1">4.IE兼容模式及国内360浏览器内核控制 <a class="header-anchor" href="#_4-ie兼容模式及国内360浏览器内核控制" aria-hidden="true">#</a></h4><p>用 <code>&lt;meta&gt;</code> 标签可以指定页面应该用什么版本的IE来渲染；</p><p>如果你想要了解更多，请点击<a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e" target="_blank" rel="noopener noreferrer">这里</a>；</p><p>360浏览器新增加了一个控制手段：内核控制Meta标签。只要你在自己的网站里增加一个Meta标签，告诉360浏览器这个网址应该用哪个内核渲染，那么360浏览器就会在读取到这个标签后，立即切换对应的内核。并将这个行为应用于这个二级域名下所有网址。如果想了解360的渲染控制标签，请点击<a href="http://se.360.cn/v6/help/meta.html" target="_blank" rel="noopener noreferrer">这里</a>；</p><p>不同doctype在不同浏览器下会触发不同的渲染模式（<a href="https://hsivonen.fi/doctype/" target="_blank" rel="noopener noreferrer">这篇文章</a>总结的很到位）。</p><div class="language-html"><pre><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=Edge,chrome=1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>renderer<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>webkit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_5-引入css-js" tabindex="-1">5.引入CSS, JS <a class="header-anchor" href="#_5-引入css-js" aria-hidden="true">#</a></h4><p>根据HTML5规范, 通常在引入CSS和JS时不需要指明<code>type</code>，因为 <code>text/css</code> 和 <code>text/javascript</code> 分别是他们的默认值。</p><h4 id="_6-脚本加载" tabindex="-1">6.脚本加载 <a class="header-anchor" href="#_6-脚本加载" aria-hidden="true">#</a></h4><p>脚本引用写在 body 结束标签之前。</p><h4 id="_7-属性顺序" tabindex="-1">7.属性顺序 <a class="header-anchor" href="#_7-属性顺序" aria-hidden="true">#</a></h4><p>属性应该按照特定的顺序出现以保证易读性；</p><ul><li><code>class</code></li><li><code>id</code></li><li><code>name</code></li><li><code>data-*</code></li><li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code>, <code>value</code> , <code>max-length</code>, <code>max</code>,<code>min</code>, <code>pattern</code></li><li><code>placeholder</code>, <code>title</code>, <code>alt</code></li><li><code>aria-*</code>, <code>role</code></li><li><code>required</code>, <code>readonly</code>, <code>disabled</code></li></ul><p>class是为高可复用组件设计的，所以应处在第一位；</p><p>id更加具体且应该尽量少使用，所以将它放在第二位。</p><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-modal</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>toggle<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Example link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form-control<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_8-boolean属性" tabindex="-1">8.boolean属性 <a class="header-anchor" href="#_8-boolean属性" aria-hidden="true">#</a></h4><p>boolean属性指不需要声明取值的属性，XHTML需要每个属性声明取值，但是HTML5并不需要；</p><p>更多内容可以参考 <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes" target="_blank" rel="noopener noreferrer">WhatWG section on boolean attributes</a>：</p><blockquote><p>boolean属性的存在表示取值为true，不存在则表示取值为false。</p></blockquote><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>checkbox<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">checked</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">selected</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_7-内联样式" tabindex="-1">7.内联样式 <a class="header-anchor" href="#_7-内联样式" aria-hidden="true">#</a></h4><p>HTML标签内不建议内联样式，应抽离出来放在CSS文件中。</p><div class="language-html"><pre><code><span class="token comment">&lt;!-- not good --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">font-size</span><span class="token punctuation">:</span>14px<span class="token punctuation">;</span><span class="token property">line-height</span><span class="token punctuation">:</span>20px<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- good --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>article-info<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+.article-info {
+  font-size: 14px;
+  line-height: 20px;
+}
+</code></pre></div><h4 id="_8-减少标签数量" tabindex="-1">8.减少标签数量 <a class="header-anchor" href="#_8-减少标签数量" aria-hidden="true">#</a></h4><p>在编写HTML代码时，需要尽量避免多余的父节点；</p><p>很多时候，需要通过迭代和重构来使HTML变得更少。</p><div class="language-html"><pre><code><span class="token comment">&lt;!-- Not well --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>avatar<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- Better --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>avatar<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_9-实用高于完美" tabindex="-1">9.实用高于完美 <a class="header-anchor" href="#_9-实用高于完美" aria-hidden="true">#</a></h4><p>尽量遵循HTML标准和语义，但是不应该以浪费实用性作为代价；</p><p>任何时候都要用尽量小的复杂度和尽量少的标签来解决问题。</p><h2 id="css规范" tabindex="-1">css规范 <a class="header-anchor" href="#css规范" aria-hidden="true">#</a></h2><h4 id="_1-合理的避免使用id" tabindex="-1">1.合理的避免使用ID <a class="header-anchor" href="#_1-合理的避免使用id" aria-hidden="true">#</a></h4><p>尽量少用id,先考虑用class</p><h4 id="_2-缩写属性" tabindex="-1">2.缩写属性 <a class="header-anchor" href="#_2-缩写属性" aria-hidden="true">#</a></h4><p>使用缩写属性，提高代码效率和可读性</p><div class="language-css"><pre><code><span class="token property">padding-bottom</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token property">padding-left</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+<span class="token property">padding-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+可以写成
+<span class="token property">padding</span><span class="token punctuation">:</span> 0 1em 2em<span class="token punctuation">;</span>
+</code></pre></div><h4 id="_3-单位和0" tabindex="-1">3.单位和0 <a class="header-anchor" href="#_3-单位和0" aria-hidden="true">#</a></h4><p>省略“0”值后面的单位。不要在0值后面使用单位，除非有值。</p><h4 id="_4-十六进制表示法" tabindex="-1">4.十六进制表示法 <a class="header-anchor" href="#_4-十六进制表示法" aria-hidden="true">#</a></h4><p>可能的话，使用3个字符的十六进制表示法，3个字符的十六进制表示法更简短。</p><div class="language-css"><pre><code>//不推荐
+<span class="token property">color</span><span class="token punctuation">:</span> #FF33AA<span class="token punctuation">;</span> 
+//推荐
+<span class="token property">color</span><span class="token punctuation">:</span> #f3a<span class="token punctuation">;</span>
+</code></pre></div><h4 id="_5-声明结束" tabindex="-1">5.声明结束 <a class="header-anchor" href="#_5-声明结束" aria-hidden="true">#</a></h4><p>为了保证一致性和可扩展性，每个声明应该用分号结束，每个声明换行。</p><h4 id="_6-属性名结束" tabindex="-1">6.属性名结束 <a class="header-anchor" href="#_6-属性名结束" aria-hidden="true">#</a></h4><p>属性名的冒号后使用一个空格。出于一致性的原因， 属性和值（但属性和冒号之间没有空格）的之间始终使用一个空格。</p><div class="language-css"><pre><code><span class="token selector">//不推荐
+h3</span> <span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span>bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">//推荐
+h3</span> <span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_7-选择器嵌套-less-scss" tabindex="-1">7.选择器嵌套 (LESS,SCSS) <a class="header-anchor" href="#_7-选择器嵌套-less-scss" aria-hidden="true">#</a></h4><p>在Sass,less中你可以嵌套选择器，这可以使代码变得更清洁和可读。嵌套所有的选择器，但尽量避免嵌套没有任何内容的选择器。</p><h4 id="_8-css-reset（源自bootstrap）" tabindex="-1">8.CSS reset（源自Bootstrap） <a class="header-anchor" href="#_8-css-reset（源自bootstrap）" aria-hidden="true">#</a></h4><p>脚手架中已经有体现，也可以拿开源的如下</p><div class="language-css"><pre><code><span class="token comment">/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */</span>
+
+<span class="token comment">/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */</span>
+
+<span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">-ms-text-size-adjust</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+  <span class="token property">-webkit-text-size-adjust</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Remove the margin in all browsers (opinionated).
+ */</span>
+
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* HTML5 display definitions
+   ========================================================================== */</span>
+
+<span class="token comment">/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */</span>
+
+article<span class="token punctuation">,</span>
+aside<span class="token punctuation">,</span>
+details<span class="token punctuation">,</span> <span class="token comment">/* 1 */</span>
+figcaption<span class="token punctuation">,</span>
+figure<span class="token punctuation">,</span>
+footer<span class="token punctuation">,</span>
+header<span class="token punctuation">,</span>
+main<span class="token punctuation">,</span> <span class="token comment">/* 2 */</span>
+<span class="token selector">menu,
+nav,
+section,
+summary</span> <span class="token punctuation">{</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct display in IE 9-.
+ */</span>
+
+<span class="token selector">audio,
+canvas,
+progress,
+video</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct display in iOS 4-7.
+ */</span>
+
+<span class="token selector">audio:not([controls])</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */</span>
+
+<span class="token selector">progress</span> <span class="token punctuation">{</span>
+  <span class="token property">vertical-align</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */</span>
+
+template<span class="token punctuation">,</span> <span class="token comment">/* 1 */</span>
+<span class="token selector">[hidden]</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Links
+   ========================================================================== */</span>
+
+<span class="token comment">/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */</span>
+
+<span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">-webkit-text-decoration-skip</span><span class="token punctuation">:</span> objects<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */</span>
+
+<span class="token selector">a:active,
+a:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">outline-width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Text-level semantics
+   ========================================================================== */</span>
+
+<span class="token comment">/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */</span>
+
+<span class="token selector">abbr[title]</span> <span class="token punctuation">{</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline dotted<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */</span>
+
+<span class="token selector">b,
+strong</span> <span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */</span>
+
+<span class="token selector">b,
+strong</span> <span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bolder<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct font style in Android 4.3-.
+ */</span>
+
+<span class="token selector">dfn</span> <span class="token punctuation">{</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */</span>
+
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0.67em 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct background and color in IE 9-.
+ */</span>
+
+<span class="token selector">mark</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ff0<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct font size in all browsers.
+ */</span>
+
+<span class="token selector">small</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */</span>
+
+<span class="token selector">sub,
+sup</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">vertical-align</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">sub</span> <span class="token punctuation">{</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> -0.25em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">sup</span> <span class="token punctuation">{</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -0.5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Embedded content
+   ========================================================================== */</span>
+
+<span class="token comment">/**
+ * Remove the border on images inside links in IE 10-.
+ */</span>
+
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">border-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Hide the overflow in IE.
+ */</span>
+
+<span class="token selector">svg:not(:root)</span> <span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Grouping content
+   ========================================================================== */</span>
+
+<span class="token comment">/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */</span>
+
+<span class="token selector">code,
+kbd,
+pre,
+samp</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> monospace<span class="token punctuation">,</span> monospace<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Add the correct margin in IE 8.
+ */</span>
+
+<span class="token selector">figure</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em 40px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */</span>
+
+<span class="token selector">hr</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Forms
+   ========================================================================== */</span>
+
+<span class="token comment">/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */</span>
+
+<span class="token selector">button,
+input,
+select,
+textarea</span> <span class="token punctuation">{</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Restore the font weight unset by the previous rule.
+ */</span>
+
+<span class="token selector">optgroup</span> <span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */</span>
+
+<span class="token selector">button,
+input</span> <span class="token punctuation">{</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */</span>
+
+<span class="token selector">button,
+select</span> <span class="token punctuation">{</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">text-transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */</span>
+
+button<span class="token punctuation">,</span>
+html [type=<span class="token string">&quot;button&quot;</span>]<span class="token punctuation">,</span> <span class="token comment">/* 1 */</span>
+<span class="token selector">[type=&quot;reset&quot;],
+[type=&quot;submit&quot;]</span> <span class="token punctuation">{</span>
+  <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> button<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Remove the inner border and padding in Firefox.
+ */</span>
+
+<span class="token selector">button::-moz-focus-inner,
+[type=&quot;button&quot;]::-moz-focus-inner,
+[type=&quot;reset&quot;]::-moz-focus-inner,
+[type=&quot;submit&quot;]::-moz-focus-inner</span> <span class="token punctuation">{</span>
+  <span class="token property">border-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Restore the focus styles unset by the previous rule.
+ */</span>
+
+<span class="token selector">button:-moz-focusring,
+[type=&quot;button&quot;]:-moz-focusring,
+[type=&quot;reset&quot;]:-moz-focusring,
+[type=&quot;submit&quot;]:-moz-focusring</span> <span class="token punctuation">{</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 1px dotted ButtonText<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */</span>
+
+<span class="token selector">fieldset</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #c0c0c0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 2px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0.35em 0.625em 0.75em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */</span>
+
+<span class="token selector">legend</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token comment">/* 3 */</span>
+  <span class="token property">white-space</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Remove the default vertical scrollbar in IE.
+ */</span>
+
+<span class="token selector">textarea</span> <span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */</span>
+
+<span class="token selector">[type=&quot;checkbox&quot;],
+[type=&quot;radio&quot;]</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */</span>
+
+<span class="token selector">[type=&quot;number&quot;]::-webkit-inner-spin-button,
+[type=&quot;number&quot;]::-webkit-outer-spin-button</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */</span>
+
+<span class="token selector">[type=&quot;search&quot;]</span> <span class="token punctuation">{</span>
+  <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> textfield<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">outline-offset</span><span class="token punctuation">:</span> -2px<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */</span>
+
+<span class="token selector">[type=&quot;search&quot;]::-webkit-search-cancel-button,
+[type=&quot;search&quot;]::-webkit-search-decoration</span> <span class="token punctuation">{</span>
+  <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */</span>
+
+<span class="token selector">::-webkit-input-placeholder</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.54<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */</span>
+
+<span class="token selector">::-webkit-file-upload-button</span> <span class="token punctuation">{</span>
+  <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> button<span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_9-css3属性前缀兼容" tabindex="-1">9.CSS3属性前缀兼容 <a class="header-anchor" href="#_9-css3属性前缀兼容" aria-hidden="true">#</a></h4><p>css3只需要写标准属性和值，通过Autoprefixer构建工具来自动实现兼容属性前缀补全。</p><div class="language-scss"><pre><code><span class="token comment">/* not good */</span>
+<span class="token selector">.element </span><span class="token punctuation">{</span>
+    <span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+       <span class="token property">-moz-border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+            <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">-webkit-linear-gradient</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> #fff 0<span class="token punctuation">,</span> #eee 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">-moz-linear-gradient</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> #fff 0<span class="token punctuation">,</span> #eee 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #fff 0<span class="token punctuation">,</span> #eee 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.element </span><span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #fff 0<span class="token punctuation">,</span> #eee 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="" tabindex="-1"><a class="header-anchor" href="#" aria-hidden="true">#</a></h4><h2 id="js规范细则" tabindex="-1">js规范细则 <a class="header-anchor" href="#js规范细则" aria-hidden="true">#</a></h2><h4 id="_1-编码通用原则" tabindex="-1">1.编码通用原则 <a class="header-anchor" href="#_1-编码通用原则" aria-hidden="true">#</a></h4><ul><li><strong>单一职责原则</strong> 一个类只能干一个事情, 一个方法最好也只干一件事情。</li><li><strong>DRY原则</strong> DRY（Don&#39;t repeat yourself），多处使用的代码需要抽离出来封装成公用方法</li><li><strong>错误处理</strong> 有没有容错处理，try catch，报错了能否继续保持页面的正常运行；</li><li><strong>可读性</strong> 代码是否可读，尽可能少的“黑魔法”</li></ul><h4 id="_2-不要重复声明变量。" tabindex="-1">2.不要重复声明变量。 <a class="header-anchor" href="#_2-不要重复声明变量。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&#39;John&#39;</span>
+<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&#39;Jane&#39;</span>     <span class="token comment">// ✗ no good</span>
+
+<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">&#39;John&#39;</span>
+name <span class="token operator">=</span> <span class="token string">&#39;Jane&#39;</span>         <span class="token comment">// ✓ good</span>
+
+</code></pre></div><h4 id="_3-return-语句中的赋值必需有括号包裹。" tabindex="-1">3. return 语句中的赋值必需有括号包裹。 <a class="header-anchor" href="#_3-return-语句中的赋值必需有括号包裹。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">function</span> <span class="token function">sum</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> result <span class="token operator">=</span> a <span class="token operator">+</span> b     <span class="token comment">// ✗ no good</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>result <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span>   <span class="token comment">// ✓ good</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre></div><h4 id="_4-关键字后面加空格。" tabindex="-1">4.关键字后面加空格。 <a class="header-anchor" href="#_4-关键字后面加空格。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>   <span class="token comment">// ✓ good</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>    <span class="token comment">// ✗ no good</span>
+</code></pre></div><h4 id="_5-函数声明时括号与函数名间加空格。" tabindex="-1">5.函数声明时括号与函数名间加空格。 <a class="header-anchor" href="#_5-函数声明时括号与函数名间加空格。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">function</span> <span class="token function">name</span> <span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>   <span class="token comment">// ✓ good</span>
+<span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>    <span class="token comment">// ✗ no good</span>
+</code></pre></div><h4 id="_6-始终使用-替代-。" tabindex="-1">6.始终使用 === 替代 ==。 <a class="header-anchor" href="#_6-始终使用-替代-。" aria-hidden="true">#</a></h4><p>例外： obj == null 可以用来检查 null || undefined。</p><h4 id="_7-字符串拼接推荐es6语法。" tabindex="-1">7.字符串拼接推荐es6语法。 <a class="header-anchor" href="#_7-字符串拼接推荐es6语法。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token comment">// ✓ good</span>
+<span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span>
+<span class="token comment">// ✗ no good</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">&#39;hello, &#39;</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">&#39;!&#39;</span>
+</code></pre></div><h4 id="_8-null" tabindex="-1">8.null <a class="header-anchor" href="#_8-null" aria-hidden="true">#</a></h4><p>适用场景：</p><ul><li>初始化一个将来可能被赋值为对象的变量</li><li>与已经初始化的变量做比较</li><li>作为一个参数为对象的函数的调用传参</li><li>作为一个返回对象的函数的返回值</li></ul><p>不适用场景：</p><ul><li>不要用null来判断函数调用时有无传参</li><li>不要与未初始化的变量做比较</li></ul><div class="language-js"><pre><code><span class="token comment">// not good</span>
+<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// not mean b is not supply</span>
+        <span class="token operator">...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> a<span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// good</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_9-undefined" tabindex="-1">9.undefined <a class="header-anchor" href="#_9-undefined" aria-hidden="true">#</a></h4><p>永远不要直接使用undefined进行变量判断；</p><p>使用typeof和字符串&#39;undefined&#39;对变量进行判断。</p><div class="language-js"><pre><code><span class="token comment">// not good</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>person <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// good</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> person <span class="token operator">===</span> <span class="token string">&#39;undefined&#39;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_10-如果有更好的实现，尽量不要使用三元表达式。" tabindex="-1">10.如果有更好的实现，尽量不要使用三元表达式。 <a class="header-anchor" href="#_10-如果有更好的实现，尽量不要使用三元表达式。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">let</span> score <span class="token operator">=</span> val <span class="token operator">?</span> val <span class="token operator">:</span> <span class="token number">0</span>     <span class="token comment">// ✗ no good</span>
+<span class="token keyword">let</span> score <span class="token operator">=</span> val <span class="token operator">||</span> <span class="token number">0</span>          <span class="token comment">// ✓ good</span>
+
+
+</code></pre></div><h4 id="_11-import-export-和解构操作中，禁止赋值到同名变量。" tabindex="-1">11.import, export 和解构操作中，禁止赋值到同名变量。 <a class="header-anchor" href="#_11-import-export-和解构操作中，禁止赋值到同名变量。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">import</span> <span class="token punctuation">{</span> config <span class="token keyword">as</span> config <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;./config&#39;</span>     <span class="token comment">// ✗ no good</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> config <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;./config&#39;</span>               <span class="token comment">// ✓ good</span>
+
+
+</code></pre></div><h4 id="_12-禁止使用-with。" tabindex="-1">12.禁止使用 with。 <a class="header-anchor" href="#_12-禁止使用-with。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">with</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>    <span class="token comment">// ✗ no good</span>
+
+</code></pre></div><h4 id="_13-展开运算符与它的表达式间不要留空白。" tabindex="-1">13.展开运算符与它的表达式间不要留空白。 <a class="header-anchor" href="#_13-展开运算符与它的表达式间不要留空白。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span> args<span class="token punctuation">)</span>    <span class="token comment">// ✗ no good</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>     <span class="token comment">// ✓ good</span>
+
+
+</code></pre></div><h4 id="_14-遇到分号时空格要后留前不留。" tabindex="-1">14.遇到分号时空格要后留前不留。 <a class="header-anchor" href="#_14-遇到分号时空格要后留前不留。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>i <span class="token operator">&lt;</span> items<span class="token punctuation">.</span>length <span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>    <span class="token comment">// ✗ no good</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> items<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>    <span class="token comment">// ✓ good</span>
+
+
+</code></pre></div><h4 id="_15-对于变量和函数名统一使用驼峰命名法。" tabindex="-1">15.对于变量和函数名统一使用驼峰命名法。 <a class="header-anchor" href="#_15-对于变量和函数名统一使用驼峰命名法。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code>  <span class="token keyword">function</span> <span class="token function">my_function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>    <span class="token comment">// ✗ no good</span>
+  <span class="token keyword">function</span> <span class="token function">myFunction</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>     <span class="token comment">// ✓ good</span>
+
+</code></pre></div><h4 id="_16-点号操作符须与属性需在同一行。" tabindex="-1">16.点号操作符须与属性需在同一行。 <a class="header-anchor" href="#_16-点号操作符须与属性需在同一行。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code>  console<span class="token punctuation">.</span>
+    <span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;hello&#39;</span><span class="token punctuation">)</span>  <span class="token comment">// ✗ no good</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;hello&#39;</span><span class="token punctuation">)</span> <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_17-函数调用时标识符与括号间不留间隔。" tabindex="-1">17.函数调用时标识符与括号间不留间隔。 <a class="header-anchor" href="#_17-函数调用时标识符与括号间不留间隔。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code>console<span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span><span class="token string">&#39;hello&#39;</span><span class="token punctuation">)</span> <span class="token comment">// ✗ no good</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;hello&#39;</span><span class="token punctuation">)</span>  <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_18-键值对当中冒号与值之间要留空白。" tabindex="-1">18.键值对当中冒号与值之间要留空白。 <a class="header-anchor" href="#_18-键值对当中冒号与值之间要留空白。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string-property property">&#39;key&#39;</span> <span class="token operator">:</span> <span class="token string">&#39;value&#39;</span> <span class="token punctuation">}</span>    <span class="token comment">// ✗ no good</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string-property property">&#39;key&#39;</span> <span class="token operator">:</span><span class="token string">&#39;value&#39;</span> <span class="token punctuation">}</span>     <span class="token comment">// ✗ no good</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string-property property">&#39;key&#39;</span><span class="token operator">:</span><span class="token string">&#39;value&#39;</span> <span class="token punctuation">}</span>      <span class="token comment">// ✗ no good</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string-property property">&#39;key&#39;</span><span class="token operator">:</span> <span class="token string">&#39;value&#39;</span> <span class="token punctuation">}</span>     <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_19-构造函数要以大写字母开头。" tabindex="-1">19.构造函数要以大写字母开头。 <a class="header-anchor" href="#_19-构造函数要以大写字母开头。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">function</span> <span class="token function">animal</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">// ✗ no good</span>
+
+<span class="token keyword">function</span> <span class="token function">Animal</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">// ✓ good</span>
+
+</code></pre></div><h4 id="_20-子类的构造器中一定要调用-super" tabindex="-1">20.子类的构造器中一定要调用 super <a class="header-anchor" href="#_20-子类的构造器中一定要调用-super" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">// ✗ no good</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">// ✓ good</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_21-使用数组字面量而不是构造器。" tabindex="-1">21.使用数组字面量而不是构造器。 <a class="header-anchor" href="#_21-使用数组字面量而不是构造器。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>   <span class="token comment">// ✗ no good</span>
+<span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>            <span class="token comment">// ✓ good</span>
+
+</code></pre></div><h4 id="_22-注释首尾留空格。" tabindex="-1">22.注释首尾留空格。 <a class="header-anchor" href="#_22-注释首尾留空格。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token comment">//comment           // ✗ no good</span>
+<span class="token comment">// comment          // ✓ good</span>
+
+<span class="token comment">/*comment*/</span>         <span class="token comment">// ✗ no good</span>
+<span class="token comment">/* comment */</span>       <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_23-模板字符串中变量前后不加空格。" tabindex="-1">23.模板字符串中变量前后不加空格。 <a class="header-anchor" href="#_23-模板字符串中变量前后不加空格。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> name <span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>    <span class="token comment">// ✗ no good</span>
+<span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>      <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_24-检查-nan-的正确姿势是使用-isnan-。" tabindex="-1">24.检查 NaN 的正确姿势是使用 isNaN()。 <a class="header-anchor" href="#_24-检查-nan-的正确姿势是使用-isnan-。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">if</span> <span class="token punctuation">(</span>price <span class="token operator">===</span> <span class="token number">NaN</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>      <span class="token comment">// ✗ no good</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNaN</span><span class="token punctuation">(</span>price<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>       <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_25-自调用匿名函数-使用括号包裹。" tabindex="-1">25.自调用匿名函数 使用括号包裹。 <a class="header-anchor" href="#_25-自调用匿名函数-使用括号包裹。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">const</span> <span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment">// ✗ no good</span>
+<span class="token keyword">const</span> getName <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment">// ✓ good</span>
+<span class="token keyword">const</span> getName <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_26-代码块首尾留空格。" tabindex="-1">26.代码块首尾留空格。 <a class="header-anchor" href="#_26-代码块首尾留空格。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">if</span> <span class="token punctuation">(</span>admin<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>     <span class="token comment">// ✗ no good</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>admin<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>    <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_27-严格模式" tabindex="-1">27.严格模式 <a class="header-anchor" href="#_27-严格模式" aria-hidden="true">#</a></h4><p>严格模式也确保了 javascript 代码更加的健壮，运行的也更加快速。</p><h4 id="_28-不要定义冗余的函数参数。" tabindex="-1">28.不要定义冗余的函数参数。 <a class="header-anchor" href="#_28-不要定义冗余的函数参数。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">function</span> <span class="token function">sum</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> a</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// ✗ no good</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// ✓ good</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="_29-使用-this-前请确保-super-已调用。" tabindex="-1">29.使用 this 前请确保 super() 已调用。 <a class="header-anchor" href="#_29-使用-this-前请确保-super-已调用。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>legs <span class="token operator">=</span> <span class="token number">4</span>     <span class="token comment">// ✗ no good</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre></div><h4 id="_30-用-throw-抛错时，抛出-error-对象而不是字符串。" tabindex="-1">30.用 throw 抛错时，抛出 Error 对象而不是字符串。 <a class="header-anchor" href="#_30-用-throw-抛错时，抛出-error-对象而不是字符串。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">throw</span> <span class="token string">&#39;error&#39;</span>               <span class="token comment">// ✗ no good</span>
+<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&#39;error&#39;</span><span class="token punctuation">)</span>    <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_31-不要使用-undefined-来初始化变量。" tabindex="-1">31.不要使用 undefined 来初始化变量。 <a class="header-anchor" href="#_31-不要使用-undefined-来初始化变量。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token keyword">undefined</span>    <span class="token comment">// ✗ no good</span>
+<span class="token keyword">let</span> name
+name <span class="token operator">=</span> <span class="token string">&#39;value&#39;</span>          <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_32-同一模块有多个导入时一次性写完。" tabindex="-1">32.同一模块有多个导入时一次性写完。 <a class="header-anchor" href="#_32-同一模块有多个导入时一次性写完。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">import</span> <span class="token punctuation">{</span> myFunc1 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;module&#39;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> myFunc2 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;module&#39;</span>          <span class="token comment">// ✗ no good</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> myFunc1<span class="token punctuation">,</span> myFunc2 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;module&#39;</span> <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_33-不要解构空值。" tabindex="-1">33.不要解构空值。 <a class="header-anchor" href="#_33-不要解构空值。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">=</span> foo         <span class="token comment">// ✗ no good</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token punctuation">{</span> b <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">=</span> foo      <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_34-不要随意更改关键字的值。" tabindex="-1">34.不要随意更改关键字的值。 <a class="header-anchor" href="#_34-不要随意更改关键字的值。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">let</span> <span class="token keyword">undefined</span> <span class="token operator">=</span> <span class="token string">&#39;value&#39;</span>     <span class="token comment">// ✗ no good</span>
+</code></pre></div><h4 id="_35-new-创建对象实例后需要赋值给变量。" tabindex="-1">35.new 创建对象实例后需要赋值给变量。 <a class="header-anchor" href="#_35-new-创建对象实例后需要赋值给变量。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">new</span> <span class="token class-name">Character</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                     <span class="token comment">// ✗ no good</span>
+<span class="token keyword">const</span> character <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Character</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_36-避免不必要的布尔转换。" tabindex="-1">36.避免不必要的布尔转换。 <a class="header-anchor" href="#_36-避免不必要的布尔转换。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">!</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token comment">// ✗ no good</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>     <span class="token comment">// ✓ good</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_37-不要省去小数点前面的0。" tabindex="-1">37.不要省去小数点前面的0。 <a class="header-anchor" href="#_37-不要省去小数点前面的0。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">const</span> discount <span class="token operator">=</span> <span class="token number">.5</span>      <span class="token comment">// ✗ no good</span>
+<span class="token keyword">const</span> discount <span class="token operator">=</span> <span class="token number">0.5</span>     <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_38-嵌套的代码块中禁止再定义函数。" tabindex="-1">38.嵌套的代码块中禁止再定义函数。 <a class="header-anchor" href="#_38-嵌套的代码块中禁止再定义函数。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">if</span> <span class="token punctuation">(</span>authenticated<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">function</span> <span class="token function">setAuthUser</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>    <span class="token comment">// ✗ no good</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_39-使用-dirname-和-filename-时尽量避免使用字符串拼接。" tabindex="-1">39.使用 __dirname 和 __filename 时尽量避免使用字符串拼接。 <a class="header-anchor" href="#_39-使用-dirname-和-filename-时尽量避免使用字符串拼接。" aria-hidden="true">#</a></h4><div class="language-js"><pre><code><span class="token keyword">const</span> pathToFile <span class="token operator">=</span> __dirname <span class="token operator">+</span> <span class="token string">&#39;/app.js&#39;</span>            <span class="token comment">// ✗ no good</span>
+<span class="token keyword">const</span> pathToFile <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&#39;app.js&#39;</span><span class="token punctuation">)</span>   <span class="token comment">// ✓ good</span>
+</code></pre></div><h4 id="_40-杂项" tabindex="-1">40. 杂项 <a class="header-anchor" href="#_40-杂项" aria-hidden="true">#</a></h4><p>代码块中避免多余留白 switch 一定要使用 break 来将条件分支正常中断。 不要使用 eval()。 switch 语句中不要定义重复的 case 分支。 不要对变量使用 delete 操作。 不要修改使用 const 声明的变量。const声明的变量是只读的 避免使用 arguments.callee 和 arguments.caller。 对于三元运算符 ? 和 : 与他们所负责的代码处于同一行 不允许有连续多行空行。 不要丢掉异常处理中err参数。 else 关键字要与花括号保持在同一行。 不要定义未使用的变量。 除需要转义的情况外，字符串统一使用单引号。 使用两个空格进行缩进。</p></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-07c132fc><div class="edit" data-v-07c132fc><div class="edit-link" data-v-07c132fc data-v-1ed99556><!----></div></div><div class="updated" data-v-07c132fc><!----></div></footer><div class="next-and-prev-link" data-v-7eddb2c4 data-v-38ede35f><div class="container" data-v-38ede35f><div class="prev" data-v-38ede35f><a class="link" href="/admin-docs/standard/standard" data-v-38ede35f><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-prev" data-v-38ede35f><path d="M19,11H7.4l5.3-5.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-7,7c-0.1,0.1-0.2,0.2-0.2,0.3c-0.1,0.2-0.1,0.5,0,0.8c0.1,0.1,0.1,0.2,0.2,0.3l7,7c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L7.4,13H19c0.6,0,1-0.4,1-1S19.6,11,19,11z"></path></svg><span class="text" data-v-38ede35f>编码格式(必)</span></a></div><div class="next" data-v-38ede35f><!----></div></div></div><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"doc_advanced_chart.md\":\"bdb1fd97\",\"doc_advanced_components.md\":\"6b77577f\",\"doc_advanced_cors.md\":\"f72013dc\",\"doc_advanced_error.md\":\"9c6cdc3c\",\"doc_advanced_eslint.md\":\"88777ae8\",\"doc_advanced_icon.md\":\"5cde4080\",\"doc_advanced_style-guide.md\":\"577773ba\",\"doc_base_deploy.md\":\"8f69bd17\",\"doc_base_env.md\":\"0faae528\",\"doc_base_guide.md\":\"192118b0\",\"doc_base_import.md\":\"2068f21d\",\"doc_base_layout.md\":\"6f93f068\",\"doc_base_mock.md\":\"cf6a2a58\",\"doc_base_new-page.md\":\"644d2feb\",\"doc_base_permission.md\":\"e9001d08\",\"doc_base_router-and-nav.md\":\"612e21e4\",\"doc_base_server.md\":\"1b5d6ca6\",\"doc_base_style.md\":\"9519cdd0\",\"doc_thanks.md\":\"c16e1a5f\",\"git_cmd.md\":\"c102a2cc\",\"git_git.md\":\"cc54446f\",\"guide_index.md\":\"cab49cd8\",\"index.md\":\"a03f0b6e\",\"standard_more.md\":\"03706ab9\",\"standard_standard.md\":\"48904836\",\"tablelayout_disposition.md\":\"85f29820\",\"tablelayout_doubt.md\":\"aec84754\",\"tablelayout_event.md\":\"553f767d\",\"tablelayout_methods.md\":\"f4595090\",\"tablelayout_outline.md\":\"a9ec5df8\",\"tablelayout_slot-notice.md\":\"48946f3d\",\"tablelayout_slot.md\":\"2cacb790\"}")</script>
+    <script type="module" async src="/admin-docs/assets/app.705411ad.js"></script>
+    
+  </body>
+</html>
