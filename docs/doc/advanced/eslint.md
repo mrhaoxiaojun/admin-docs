@@ -2,107 +2,34 @@
 
 不管是多人合作还是个人项目，代码规范都是很重要的。这样做不仅可以很大程度地避免基本语法错误，也保证了代码的可读性。
 
+:::tip 提示
+
+本框架已集成了 eslint + prettier + lint-staged ,语法错误提示和保存美化动作需要安装插件（下面会提到），且主要针对vscode编辑器，其他编辑器请自行配置
+
+:::
+
 [eslint 中文官网](http://eslint.cn/docs/user-guide/getting-started)
 
-## 安装
+## 识别错误
 
-1、安装 eslint
+:::warning  
+vscode 编辑器需要安装eslint+prettier的插件，才可以在开发时配合检查代码及美化代码
+:::
 
-```shell
-// 你可以使用 npm 安装 ESLint：
-npm install eslint --save-dev
-// 紧接着你应该设置一个配置文件：
-./node_modules/.bin/eslint --init
-```
+eslint + prettier 配合的冲突已解决，且在代码编写的过程中，会根据自动提示格式错误和美化代码，前提时需要安装以上插件
 
-执行 init 时，选择的选项如下
 
-```shell
-询问：How would you like to use ESLint? ...
-选择：To check syntax and find problems
+## 运行检查
 
-询问：What type of modules does your project use? ...
-选择：JavaScript modules (import/export)
+运行`npm run lint`按照`standard`规范进行校验
 
-询问：Which framework does your project use? ...
-选择：Vue.js
+运行`npm run format`将使用`prettier`进行代码的美化
 
-询问：Does your project use TypeScript?
-选择：yes
+执行代码提交命令`git commit -m'xxx'`前都将执行上述两个命令，不符合规范的代码将会在命令行中输出提示，且不会完成本次`commit`
 
-询问：Where does your code run? ...
-选择：Browser  (node服务端选择node项)
+## 关闭 ESLint 检查
 
-询问：What format do you want your config file to be in? ...
-选择：JavaScript
-
-询问：Would you like to install them now with npm?
-选择：yes
-
-```
-
-更新根目录.eslintrc.js (没有就创建) ，如下：
-
-```ts
-module.exports = {
-  env: {
-    node: true,
-  },
-  extends: [
-    "eslint:recommended",
-    "plugin:vue/vue3-essential",
-    "plugin:prettier/recommended",
-  ],
-  globals: {
-    defineProps: "readonly",
-    defineEmits: "readonly",
-    defineExpose: "readonly",
-    withDefaults: "readonly",
-  },
-};
-
-```
-
-2、安装 prettier
-
-```shell
-npm install -D prettier eslint-plugin-prettier eslint-config-prettier
-
-```
-
-根目录创建.prettierrc.js
-
-```ts
-module.exports = {
-  endOfLine: "auto",
-  printWidth: 120,
-};
-
-```
-
-3、vsCode 安装 ESLint、Prettier 插件
-
-## 配置 package.json
-
-修改 package.json 文件，在 script 增加以下项目
-
-命令说明：
-
-- eslint - 运行 eslint 命令
-- --fix - 修复并校验
-- --ext - 指定扩展文件名
-- "src" - 代表只对 src 目录运行 lint
-
-```json
-  "scripts": {
-    "lint": "eslint --fix --ext .js,.vue src"
-  }
-
-```
-
-推荐阅读
-
-[Vite、Vue3 项目框架下使用 ESLint](https://blog.craftyun.cn/post/226.html)
+把.eslintrc 配置文件中的 root 改为 false 即可。
 
 ## 常用配置规则
 
@@ -110,27 +37,6 @@ module.exports = {
 module.exports = {
   // 以当前目录为根目录，不再向上查找 .eslintrc.js
   root: true,
-
-  // 环境定义了预定义的全局变量。
-  env: {
-    //环境定义了预定义的全局变量。更多在官网查看
-    "browser": true,
-    "node": true,
-    "commonjs": true,
-    "amd": true,
-    "es6": true,
-    "mocha": true
-  },
-
-  'extends': [
-    'plugin:vue/vue3-essential',
-    'eslint:recommended'
-  ],
-
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
-
   /*
     //配置规则
     rules: {
@@ -677,8 +583,5 @@ module.exports = {
 
 ```
 
-[Vue 中 ESlint 配置文件.eslintrc 文件](https://www.jianshu.com/p/3381d00fae1d)
 
-## 关闭 ESLint 检查
 
-把.eslintrc 配置文件中的 root 改为 false 即可。

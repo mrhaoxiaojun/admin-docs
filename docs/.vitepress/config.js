@@ -23,7 +23,7 @@ module.exports = {
       { text: '框架文档', link: '/doc/base/guide' },
       { text: '编码格式', link: '/standard/standard' },
       { text: 'Git管理', link: '/git/git' },
-      { text: 'UI 组件', link: '/' },
+      { text: 'UI 组件', link: 'https://github.com/mrhaoxiaojun/mini-ui-design', target:'_blank' },
       // {
       //   text: '其他知识',
       //   items: [
@@ -88,11 +88,10 @@ module.exports = {
           text:'进阶',
           children: [
             { text: '内部组件', link: '/doc/advanced/components'},
-            { text: '跨域问题', link: '/doc/advanced/cors'},
-            { text: '风格指南', link: '/doc/advanced/style-guide' },
             { text: 'ESLint', link: '/doc/advanced/eslint' },
             { text: '图表', link: '/doc/advanced/chart' },
-            { text: '图标', link: '/doc/advanced/icon' },
+            { text: '跨域问题', link: '/doc/advanced/cors'},
+            { text: '风格指南', link: '/doc/advanced/style-guide' },
             { text: '错误处理', link: '/doc/advanced/error' },
           ]
         },

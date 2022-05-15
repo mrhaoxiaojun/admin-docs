@@ -2,7 +2,9 @@
 
 管理后台图表也是常见得需求。这里图表推荐 AntV g2，功能齐全，支持typeScript，社区 demo 也丰富[官网](https://g2.antv.vision/zh)
 
-echarts也非常不错，这里已g2 举例
+:::tip
+echarts也非常不错，这里只是以g2 举例，并未集成到框架内
+:::
 
 ## 安装
 
