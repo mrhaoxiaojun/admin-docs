@@ -1,1 +1,0 @@
-import{_ as t,c as a,o as e,a as o}from"./app.705411ad.js";const m='{"title":"tableLayout","description":"","frontmatter":{},"headers":[{"level":2,"title":"tableLayout","slug":"tablelayout"}],"relativePath":"doc/advanced/components.md"}',c={},l=o("",3),s=[l];function _(n,r,d,i,p,u){return e(),a("div",null,s)}var b=t(c,[["render",_]]);export{m as __pageData,b as default};
