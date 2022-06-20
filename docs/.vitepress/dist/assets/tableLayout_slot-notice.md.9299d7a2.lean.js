@@ -1,0 +1,1 @@
+import{_ as t,c as d,o as r,a as e}from"./app.8b34496d.js";const g='{"title":"\u63D2\u69FD\u6CE8\u610F\u4E8B\u9879","description":"","frontmatter":{},"headers":[],"relativePath":"tableLayout/slot-notice.md"}',o={},a=e("",5),n=[a];function s(_,c,h,i,l,p){return r(),d("div",null,n)}var u=t(o,[["render",s]]);export{g as __pageData,u as default};

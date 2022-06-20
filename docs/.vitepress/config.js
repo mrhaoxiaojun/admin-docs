@@ -7,7 +7,7 @@ module.exports = {
       href: '/fe.ico'
     }]
   ],
-  base: '/admin-docs/',
+  base: '/vue3-admin-docs/',
   markdown: {
     // lineNumbers: true
   },
