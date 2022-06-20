@@ -30,7 +30,10 @@ npm install --registry=https://registry.npm.taobao.org
 
 ## 接口配置
 
-操作完第一步你的前端页面已经可以正常访问打开了，但是这里项目依赖 api 默认是本科mock数据，你需要提供如下必须的接口与设置代理到自己 api 地址上。
+操作完第一步你的前端页面已经可以正常访问打开了，但是这里项目依赖 api 默认是本地的mock数据，开关（src/config/setting.config.ts）mockOnlineDatas属性默认true
+
+
+当你进入开发需更换自己的代理地址时，**请必须实现下文中的接口，同时设置自己的代理地址，将mockOnlineDatas设置为false或删除对应的mockjs的api**
 
 
 ::: warning 我们前端自己动手丰衣足食
